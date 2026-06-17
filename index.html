@@ -5,9 +5,30 @@
     <link rel="icon" type="image/svg+xml" href="/src/assets/hero-avatar.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
+    <script>
+      (() => {
+        try {
+          const STORAGE_KEY = "astro-portfolio-theme";
+          const MEDIA_QUERY = "(prefers-color-scheme: dark)";
+          const stored = window.localStorage.getItem(STORAGE_KEY);
+          const prefersDark = window.matchMedia(MEDIA_QUERY).matches;
+          const theme =
+            stored === "light" || stored === "dark" || stored === "system"
+              ? stored
+              : "system";
+          const resolved =
+            theme === "system" ? (prefersDark ? "dark" : "light") : theme;
+          document.documentElement.classList.remove("light", "dark");
+          document.documentElement.classList.add(resolved);
+          document.documentElement.dataset.theme = theme;
+        } catch (error) {
+          console.error(error);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/start.ts"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

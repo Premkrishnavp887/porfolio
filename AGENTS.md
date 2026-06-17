@@ -2,14 +2,14 @@
 
 ## What this is
 
-TanStack Start (React) single-page portfolio app. **Not Astro** despite the repo name. SSR via Nitro/h3. Data-driven — most content lives in JSON files under `src/data/`.
+Client-side static Single Page Application (SPA) built with React 19. **Not Astro** despite the repo name. Zero SSR — all rendering happens on the client after an empty HTML shell loads. Data-driven — most content lives in JSON files under `src/data/`.
 
 ## Quick start
 
 ```bash
 bun install        # install deps (bun; npm-lock also present but bun is primary)
 bun run dev        # dev server with HMR
-bun run build      # production build (outputs to dist/, .output/)
+bun run build      # production build (outputs to dist/client/)
 bun run preview    # preview production build
 bun run lint       # ESLint (typescript-eslint + react-hooks + prettier)
 bun run format     # Prettier (printWidth 100, double quotes, trailing commas all)
@@ -19,18 +19,18 @@ No test runner configured.
 
 ## Architecture
 
-- **Routing**: file-based in `src/routes/` via TanStack Router. `routeTree.gen.ts` is auto-generated — do not edit. Currently has `/` (index) and `/projects/$slug`. The `__root.tsx` layout wraps all pages; keep `<Outlet />` intact.
+- **Routing**: via TanStack Router, initialized by `getRouter()` from `src/router.tsx` and mounted through standard React 19 / ReactDOM client-side roots. Uses file-based route definitions in `src/routes/`. Currently has `/` (index) and `/projects/$slug`. The `__root.tsx` layout wraps all pages; keep `<Outlet />` intact.
 - **Data layer**: `src/data/*.json` → parsed at build time via Zod schemas in `src/schemas/*.schema.ts` → re-exported from `src/data/index.ts`. Change content by editing JSON files, not components.
 - **Components**: shadcn/ui primitives in `src/components/ui/`, portfolio sections in `src/components/portfolio/`, project detail in `src/components/project/`.
-- **Server entry**: `src/server.ts` wraps TanStack Start's SSR with error capture (h3 swallows handler throws into JSON 500s). `src/start.ts` adds request middleware with error boundaries.
-- **Server-only code**: files named `*.server.ts` (e.g. `src/lib/config.server.ts`) are excluded from the client bundle. Env vars must be read inside request handlers, not at module scope (Cloudflare Workers bind at request time).
+- **Entry point**: `index.html` at the project root loads `src/main.tsx`, which calls `getRouter()` and mounts the app via `createRoot()` from `react-dom/client`.
+- **Deployment**: Static export via Vite 8. Vercel is configured with the "Vite/Other" framework preset pointing at `dist/client`.
 
 ## Stack
 
 | Layer           | Choice                                                          |
 | --------------- | --------------------------------------------------------------- |
-| Framework       | React 19 + TanStack Start                                       |
-| Build           | Vite 7 + `@lovable.dev/vite-tanstack-config`                    |
+| Framework       | React 19                                                       |
+| Build           | Vite 8 + `@vitejs/plugin-react` + `@tailwindcss/vite`           |
 | Styling         | Tailwind CSS v4 (`@tailwindcss/vite` plugin) + `tw-animate-css` |
 | UI              | shadcn/ui (new-york style), lucide-react, framer-motion, sonner |
 | Validation      | Zod                                                             |
@@ -41,8 +41,7 @@ No test runner configured.
 
 - **Path alias**: `@/` → `src/` (configured in tsconfig.json and vite).
 - **CSS**: Tailwind v4 utility-first. `@theme inline` + `@utility` blocks in `src/styles.css`. Theme is dark-first with a light variant via `.light` class on `<html>`.
-- **Theme**: `dark`/`light`/`system` persisted to localStorage key `astro-portfolio-theme`. An inline script in `__root.tsx` prevents flash.
-- **Imports**: no `server-only` package (TanStack Start uses `*.server.ts` convention instead) — ESLint blocks it.
+- **Theme**: `dark`/`light`/`system` persisted to localStorage key `astro-portfolio-theme`. An inline script in `index.html` prevents flash.
 - **React Refresh**: components should have stable export names (warn-only rule).
 - **JSON data** files are validated by Zod schemas at import time. Add new fields to both the JSON and the corresponding schema.
 - **`routeTree.gen.ts`** is in `.prettierignore` — don't format or edit manually.
@@ -54,14 +53,20 @@ No test runner configured.
 | --------------------------- | ----------------------------------------------------------------- |
 | `src/routes/__root.tsx`     | App shell — 404, error boundary, theme, QueryClient, `<Outlet />` |
 | `src/routes/index.tsx`      | Single-page portfolio root (Hero → Contact sections)              |
-| `src/server.ts`             | SSR error wrapper — entrypoint for Nitro build                    |
-| `src/start.ts`              | TanStack Start instance with error middleware                     |
 | `src/data/index.ts`         | Central data re-export (all JSON parsed through Zod)              |
-| `vite.config.ts`            | Minimal — `@lovable.dev/vite-tanstack-config` handles most setup  |
+| `vite.config.ts`            | Minimal — Vite config with `@vitejs/plugin-react`, `@tailwindcss/vite`, `vite-tsconfig-paths` |
+| `src/main.tsx`              | Client entry — calls `getRouter()`, mounts `<RouterProvider>` via `createRoot` |
+| `src/router.tsx`            | Router factory — `getRouter()` creates TanStack Router instance   |
 | `src/config/themeConfig.ts` | Theme constants (storage key, supported themes)                   |
 | `src/lib/config.server.ts`  | Server-only config pattern reference                              |
 
 ## Changelog
+
+### 2026-06-17 — SSR-to-SPA migration
+
+- **Architecture**: Migrated from TanStack Start / Nitro SSR to a fully client-side static SPA. Removed server entry points (`src/server.ts`, `src/start.ts`) and server-only code conventions. Entry point is now `index.html` → `src/main.tsx`, with router initialized via `getRouter()` from `src/router.tsx`.
+- **Build**: Upgraded to Vite 8 (was Vite 7). Output directory changed from `dist/, .output/` to `dist/client/`.
+- **Deployment**: Vercel now uses the "Vite/Other" static framework preset targeting `dist/client` instead of Nitro SSR.
 
 ### 2026-06-17 — Structural updates
 

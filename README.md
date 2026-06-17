@@ -1,6 +1,6 @@
 # Portfolio - System Architecture & Engineering Portfolio
 
-An optimized, data-driven software engineering portfolio designed to showcase projects, system design blueprints, and live open-source telemetry. Built on **React 19** and **TanStack Start**, leveraging server-side pre-rendering capabilities and built with **Bun** for maximum local development speed.
+An optimized, data-driven software engineering portfolio designed to showcase projects, system design blueprints, and live open-source telemetry. Built on **React 19** and **TanStack Router**, rendered as a client-side static SPA and built with **Bun** for maximum local development speed.
 
 ---
 
@@ -23,7 +23,7 @@ This application decouples content completely from the visual markup using an au
 
 1. **Static Configuration Layer:** Raw textual details (projects, skills, credentials) exist exclusively inside `src/data/*.json`.
 2. **Strict Validation Barrier:** At compilation time, all JSON modules are parsed through strict **Zod schemas** inside `src/schemas/`. If an unexpected data structure occurs (e.g., a missing required attribute or a `null` string value), the build system safely fails instantly rather than allowing a broken runtime page crash.
-3. **Hydration Engine:** The pre-rendered server structure outputs high-speed HTML, hydrating seamlessly into an interactive single-page application (SPA).
+3. **Rendering Engine:** All components render client-side via React 19 `createRoot()`, producing a fully interactive single-page application (SPA) from a static HTML shell.
 
 ---
 
@@ -31,8 +31,8 @@ This application decouples content completely from the visual markup using an au
 
 | Layer | Component | Description |
 | :--- | :--- | :--- |
-| **Core Engine** | `React 19` + `TanStack Start` | Utilizes modern React capabilities with stateful file-based SSR routing frameworks. |
-| **Runtime & Build** | `Bun` + `Vite 7` | Extreme performance dependency tracking and asset bundling workflows. |
+| **Core Engine** | `React 19` + `TanStack Router` | Modern React with file-based client-side routing. |
+| **Runtime & Build** | `Bun` + `Vite 8` | Extreme performance dependency tracking and asset bundling workflows. |
 | **Styling Pipeline** | `Tailwind CSS v4` | Built with the modern native `@tailwindcss/vite` configuration plugin for rapid style parsing. |
 | **Fluid Animations** | `Framer Motion` + `tw-animate-css` | Manages global layout shifts and interaction acceleration bounds uniformly. |
 | **Data Integrity** | `Zod 3.x` | Runtime and compile-time defensive type-casting and formatting checks. |
@@ -51,7 +51,7 @@ To prevent hitting GitHub's unauthenticated API rate-limiting thresholds (60 req
 GITHUB_TOKEN=your_personal_access_token_here
 Note: The system reads this token directly into execution headers within src/lib/github.ts and maps the profile name cleanly via z.string().nullable().optional() validation fields.
 
-🚀 Engineering Directory Blueprint
+## 🚀 Engineering Directory Blueprint
 Plaintext
 ├── .env                  # Local secret authentication strings (Git ignored)
 ├── AGENTS.md             # Persistent engineering log tracking state changes for AI tooling
@@ -68,7 +68,8 @@ Plaintext
 │   ├── routes/           # Core view paths. '__root.tsx' wraps full app structure definitions
 │   └── schemas/          # Defensive typed verification schemas (Zod validation blueprints)
 └── vite.config.ts        # Modular Vite bundling configurations
-💻 Local Development Workflow
+
+## 💻 Local Development Workflow
 Ensure your machine has Bun installed cleanly before beginning execution.
 
 1. Installation
@@ -87,7 +88,8 @@ Always verify production bundling states locally before committing adjustments o
 Bash
 bun run build    # Compiles and minifies assets to dist/client
 bun run preview  # Local simulation environment checking the built static output
-📦 Production Deployment Guidelines
+
+## 📦 Production Deployment Guidelines
 The client-side bundle compiles to static architecture assets under dist/client.
 
 Vercel Deployment Checklist:
