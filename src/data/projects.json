@@ -1,0 +1,151 @@
+[
+  {
+    "title": "AURA",
+    "slug": "aura",
+    "description": "AI-powered smart home automation platform that integrates facial recognition, machine learning, and IoT technologies to create a personalized living environment.",
+    "detail": {
+      "overview": "AURA combines computer vision, edge computing, and automation to deliver a personalized smart home experience that learns resident preferences over time.",
+      "highlights": [
+        "Face recognition unlocks personalized lighting and climate control for each household member.",
+        "Adaptive schedules anticipate user behavior and reduce energy consumption.",
+        "Secure edge processing keeps sensitive biometric data local to the device."
+      ]
+    },
+    "problem": [
+      "Home automation systems struggled to personalize behavior across multiple occupants.",
+      "Users needed better security than password-based control panels for critical devices.",
+      "Existing smart home technology required complex setup and avoided offline-sensitive data handling."
+    ],
+    "solution": [
+      "AURA uses face recognition to identify residents and apply custom living preferences automatically.",
+      "A modular IoT architecture connects sensors, cameras, and appliances through a lightweight edge controller.",
+      "The system balances convenience with security by keeping biometric inference on the Raspberry Pi gateway."
+    ],
+    "architecture": {
+      "overview": "AURA is built as a hybrid edge/cloud system that processes vision and device control locally while storing usage metadata in a lightweight database for analytics.",
+      "components": [
+        "Raspberry Pi gateway running Python and OpenCV",
+        "FaceNet-based recognition service for resident identification",
+        "MQTT messaging bus for appliance and sensor orchestration",
+        "SQLite/MySQL persistence for schedules, profiles, and event logging"
+      ],
+      "notes": [
+        "The facial recognition pipeline was optimized to run efficiently on low-power hardware.",
+        "IoT devices communicate through MQTT with secure TLS transport.",
+        "Personalization rules are evaluated in real time and cached for reduced latency."
+      ]
+    },
+    "features": [
+      "Real-time face recognition for contextual automation.",
+      "Adaptive climate control tied to occupant presence.",
+      "Multi-zone lighting scenes triggered by user identity.",
+      "Cross-device preferences synchronized through the local database."
+    ],
+    "challenges": [
+      "Optimizing computer vision for Raspberry Pi hardware without sacrificing accuracy.",
+      "Designing a flexible rule engine to support varying resident behaviors.",
+      "Maintaining privacy while still enabling meaningful personalization."
+    ],
+    "learnings": [
+      "Edge-first design improves privacy and responsiveness for home automation.",
+      "Simple UX patterns are essential for non-technical users managing complex systems.",
+      "A modular architecture made it easier to add new device integrations later."
+    ],
+    "futureEnhancements": [
+      "Add natural language voice control for hands-free operation.",
+      "Support guest profiles with temporary access policies.",
+      "Integrate solar and battery energy forecasting for greener automation."
+    ],
+    "screenshots": [
+      {
+        "src": "https://via.placeholder.com/1200x675.png?text=AURA+Dashboard",
+        "alt": "AURA smart home dashboard",
+        "caption": "Central control dashboard with occupancy-aware automation."
+      },
+      {
+        "src": "https://via.placeholder.com/1200x675.png?text=AURA+Mobile+Control",
+        "alt": "AURA mobile control interface",
+        "caption": "Mobile access for lighting, climate, and security."
+      }
+    ],
+    "tags": ["AI", "IoT"],
+    "stack": ["Python", "OpenCV", "FaceNet", "Raspberry Pi", "SQLite", "MySQL", "Computer Vision"],
+    "status": "Completed",
+    "accent": "violet"
+  },
+  {
+    "title": "HyperTransit",
+    "slug": "hypertransit",
+    "description": "A mobile-first transit platform built for live bus tracking, secure ticketing, and seamless commuter experience.",
+    "detail": {
+      "overview": "HyperTransit delivers instant transit visibility and digital ticketing for city commuters through a polished mobile interface and real-time transport updates.",
+      "highlights": [
+        "Live vehicle tracking with map integration for rider confidence.",
+        "Digital pass creation and one-tap payments for seamless boarding.",
+        "Accessible route planning for urban commuters across multiple bus lines."
+      ]
+    },
+    "problem": [
+      "Commuters lacked real-time visibility into bus arrival times and route progress.",
+      "Ticket purchase was dependent on physical kiosks or cash payments.",
+      "Transport operators needed a simpler way to manage passes and user access without manual reconciliation."
+    ],
+    "solution": [
+      "Built a Flutter mobile app that synchronizes live vehicle locations with route schedules.",
+      "Integrated Firebase authentication and payments to support digital tickets and one-time passes.",
+      "Provided an intuitive rider workflow from route discovery to boarding confirmation."
+    ],
+    "architecture": {
+      "overview": "HyperTransit combines a Flutter frontend with Firebase backend services for realtime updates, authentication, and payment workflows.",
+      "components": [
+        "Flutter mobile application for Android and iOS",
+        "Firebase Authentication for secure sign-in and user profiles",
+        "Cloud Firestore for route, schedule, and ticket state",
+        "Payment integration for one-time pass checkout"
+      ],
+      "notes": [
+        "Route state updates were pushed through Firestore listeners for immediate bus status refresh.",
+        "The app uses offline-first caching to retain route data during intermittent network coverage.",
+        "User profiles store ticket history and preferred routes for faster rebooking."
+      ]
+    },
+    "features": [
+      "Live bus tracking with route overlays and ETA updates.",
+      "Digital ticket wallet with one-time and pass purchases.",
+      "Route search and saved trips for repeat commuters.",
+      "Secure login and user profile management via Firebase."
+    ],
+    "challenges": [
+      "Synchronizing mobile UI state with real-time transit updates efficiently.",
+      "Balancing offline access with accurate ticket validation.",
+      "Designing a clean payment flow that minimized user friction."
+    ],
+    "learnings": [
+      "Real-time transport data requires lightweight event updates to preserve mobile performance.",
+      "A consistent UX flow is critical for commuter trust when purchasing tickets on the go.",
+      "Firebase provided a strong foundation for rapid prototyping with authentication and realtime sync."
+    ],
+    "futureEnhancements": [
+      "Add multimodal trip planning across bus, metro, and last-mile options.",
+      "Support scheduled ticket reminders and delay alerts.",
+      "Introduce driver-side validation tools for faster boarding."
+    ],
+    "screenshots": [
+      {
+        "src": "https://via.placeholder.com/1200x675.png?text=HyperTransit+Live+Map",
+        "alt": "Live bus tracking screen",
+        "caption": "Live bus location and estimated arrival times"
+      },
+      {
+        "src": "https://via.placeholder.com/1200x675.png?text=HyperTransit+Ticket+Wallet",
+        "alt": "Digital ticket wallet",
+        "caption": "Digital pass wallet for fast boarding"
+      }
+    ],
+    "tags": ["Mobile"],
+    "stack": ["Flutter", "Firebase"],
+    "github": "https://github.com/Ziyad-git/hypertransitapp/tree/main",
+    "status": "Completed",
+    "accent": "cyan"
+  }
+]

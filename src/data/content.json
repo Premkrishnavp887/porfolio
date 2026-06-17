@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "title": "Software & DevOps Engineer",
+    "description": "A portfolio for software engineering, DevOps, cloud, and creative infrastructure work.",
+    "ogDescription": "Explore projects, experience, GitHub activity, writing, and contact details.",
+    "twitterCard": "summary_large_image"
+  },
+  "navigation": {
+    "links": [
+      { "id": "about", "label": "About" },
+      { "id": "skills", "label": "Skills" },
+      { "id": "projects", "label": "Projects" },
+      { "id": "experience", "label": "Experience" },
+      { "id": "github", "label": "GitHub" },
+      { "id": "contact", "label": "Contact" }
+    ],
+    "actionLabels": {
+      "hireMe": "Hire me",
+      "commandPalette": "Open command palette",
+      "commandPaletteShortcut": "⌘K",
+      "themeToggle": "Toggle theme"
+    }
+  },
+  "commandPalette": {
+    "label": "Command menu",
+    "placeholder": "Jump to a section, open a link…",
+    "navigateHeading": "Navigate",
+    "linksHeading": "Links",
+    "emptyMessage": "Nothing found.",
+    "navigateItems": [
+      { "id": "home", "label": "Home", "icon": "Rocket" },
+      { "id": "about", "label": "About", "icon": "User" },
+      { "id": "skills", "label": "Skills", "icon": "Code2" },
+      { "id": "projects", "label": "Projects", "icon": "Briefcase" },
+      { "id": "experience", "label": "Experience", "icon": "Briefcase" },
+      { "id": "achievements", "label": "Certificates", "icon": "Trophy" },
+      { "id": "github", "label": "GitHub Stats", "icon": "Github" },
+      { "id": "blog", "label": "Writing", "icon": "Newspaper" },
+      { "id": "contact", "label": "Contact", "icon": "Mail" }
+    ],
+    "links": [
+      { "id": "github", "label": "GitHub profile", "icon": "Github" },
+      { "id": "linkedin", "label": "LinkedIn", "icon": "Linkedin" },
+      { "id": "email", "label": "Email me", "icon": "Mail" },
+      { "id": "resume", "label": "View resume", "icon": "FileText" }
+    ]
+  },
+  "hero": {
+    "banner": "Aspiring DevOps Professional · 2026 Graduate",
+    "introPrefix": "Hi, I'm ",
+    "roleIntro": "I'm a ",
+    "description": "I'm a final-year CS engineering student passionate about automation, cloud infrastructure, and CI/CD practices.",
+    "ctas": {
+      "projects": "View Projects",
+      "resume": "Resume",
+      "contact": "Contact me"
+    },
+    "statusText": "DevOps Intern at SAM Corporate"
+  },
+  "about": {
+    "kicker": "About",
+    "title": "Engineer at the seam of product and infra.",
+    "educationLabel": "Education",
+    "careerGoalPrefix": "Career goal — "
+  },
+  "skills": {
+    "kicker": "Skills",
+    "title": "A toolbox tuned for shipping.",
+    "skillCountSuffix": "core skills"
+  },
+  "projects": {
+    "kicker": "Projects",
+    "title": "Selected work — shipped, researched, open-sourced.",
+    "filters": ["All", "AI", "DevOps", "Mobile", "IoT", "Research"],
+    "modal": {
+      "stackLabel": "Stack",
+      "sourceLabel": "Source",
+      "demoLabel": "Live demo"
+    },
+    "detail": {
+      "backLabel": "Back to portfolio",
+      "overviewLabel": "Overview",
+      "highlightsLabel": "Highlights",
+      "problemLabel": "Problem",
+      "solutionLabel": "Solution",
+      "architectureLabel": "Architecture",
+      "architectureComponentsLabel": "Core components",
+      "architectureDiagramLabel": "Architecture diagram",
+      "featuresLabel": "Features",
+      "challengesLabel": "Challenges",
+      "learningsLabel": "Key learnings",
+      "futureLabel": "Future enhancements",
+      "screenshotsLabel": "Screenshots",
+      "notFoundTitle": "Project not found",
+      "notFoundSubtitle": "The project slug does not match a known project."
+    }
+  },
+  "experience": {
+    "kicker": "Experience",
+    "title": "A few stops along the way."
+  },
+  "achievements": {
+    "kicker": "Certificates",
+    "title": "Certificates & Achievements."
+  },
+  "whoami": {
+    "kicker": "Who am I?",
+    "title": "Six obsessions, one engineer."
+  },
+  "blog": {
+    "kicker": "Writing",
+    "title": "Notes from the build log.",
+    "readLabel": "Read article"
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title": "Let's build something worth shipping.",
+    "intro": "I'm currently open to DevOps / Software Engineering entry-level roles and internships, and eager to contribute to teams building scalable infrastructure.",
+    "highlight": "DevOps / Software Engineering",
+    "links": [
+      { "key": "email", "icon": "Mail", "label": "Email" },
+      { "key": "github", "icon": "Github", "label": "GitHub" },
+      { "key": "linkedin", "icon": "Linkedin", "label": "LinkedIn" },
+      { "key": "twitter", "icon": "Twitter", "label": "Twitter" }
+    ],
+    "form": {
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "messageLabel": "Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "you@company.com",
+      "messagePlaceholder": "What are you building?",
+      "submitLabel": "Send message",
+      "sendingLabel": "Sending…",
+      "invalidInputMessage": "Invalid input",
+      "successMessage": "Opening your email client…"
+    },
+    "footer": {
+      "builtWithCare": "Built with care.",
+      "craftedIn": "crafted in {location}"
+    }
+  },
+  "errors": {
+    "notFound": {
+      "title": "Page not found",
+      "subtitle": "The page you're looking for doesn't exist or has been moved.",
+      "action": "Go home"
+    },
+    "generic": {
+      "title": "This page didn't load",
+      "subtitle": "Something went wrong on our end. You can try refreshing or head back home.",
+      "retry": "Try again",
+      "home": "Go home"
+    }
+  }
+}

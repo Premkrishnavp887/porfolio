@@ -1,0 +1,31 @@
+{
+  "name": "PREMKRISHNA V P",
+  "shortName": "Prem",
+  "tagline": "Aspiring DevOps professional with a strong foundation in Python, Linux, networking, and cybersecurity.",
+  "summary": "Aspiring DevOps professional with a B.Tech in Computer Science, strong foundation in Python, Linux, networking, and cybersecurity, with a keen interest in automation, cloud infrastructure, and CI/CD practices. Proficient in problem-solving, scripting, and analytical thinking, eager to build scalable systems and grow in a fast-paced DevOps environment.",
+  "location": "Ernakulam, Kalady, India",
+  "email": "premkrishnavp@gmail.com",
+  "resumeUrl": "",
+  "socials": {
+    "github": "https://github.com/Premkrishnavp887",
+    "linkedin": "https://www.linkedin.com/in/premkrishnavp",
+    "twitter": "",
+    "email": "mailto:premkrishnavp@gmail.com"
+  },
+  "roles": ["Aspiring DevOps Professional", "Aspiring Python Developer", "IoT & AI Enthusiast"],
+  "stats": [
+    { "label": "Projects Built", "value": 2 },
+    { "label": "Technologies", "value": 10 },
+    { "label": "Certificates", "value": 9 },
+    { "label": "Internships", "value": 3 }
+  ],
+  "education": [
+    {
+      "school": "Adi Shankara College of Engineering and Technology",
+      "degree": "B.Tech in Computer Science Engineering",
+      "period": "2022 — 2026",
+      "detail": "Kalady, Ernakulam · Focus on software engineering, networking, and system design"
+    }
+  ],
+  "goals": "To join a dynamic engineering team where I can contribute to building scalable infrastructure, automate deployments, and grow as a DevOps professional while delivering reliable systems."
+}

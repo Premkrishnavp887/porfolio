@@ -1,0 +1,32 @@
+[
+  {
+    "title": "DevOps & Cloud",
+    "blurb": "Fascinated by CI/CD pipelines, container orchestration, and building infrastructure that scales reliably.",
+    "icon": "Workflow"
+  },
+  {
+    "title": "Cybersecurity",
+    "blurb": "Learning to think like an attacker to build more secure systems and protect what matters.",
+    "icon": "Shield"
+  },
+  {
+    "title": "AI & Machine Learning",
+    "blurb": "Exploring how intelligent systems can automate complex tasks and adapt to real-world environments.",
+    "icon": "Brain"
+  },
+  {
+    "title": "IoT & Embedded Systems",
+    "blurb": "Bridging the physical and digital worlds with sensors, actuators, and smart automation.",
+    "icon": "Cpu"
+  },
+  {
+    "title": "Python Automation",
+    "blurb": "Using Python to automate repetitive tasks, process data, and build practical solutions.",
+    "icon": "Code2"
+  },
+  {
+    "title": "Problem Solving",
+    "blurb": "Approaching every challenge with analytical thinking and a drive to find elegant solutions.",
+    "icon": "Puzzle"
+  }
+]

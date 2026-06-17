@@ -1,0 +1,26 @@
+[
+  {
+    "category": "Programming & Tools",
+    "icon": "Code2",
+    "items": [
+      { "name": "Python", "level": 88 },
+      { "name": "Linux", "level": 90 },
+      { "name": "Git & GitHub", "level": 95 },
+      { "name": "Docker", "level": 90 },
+      { "name": "SQL", "level": 70 },
+      { "name": "Firebase", "level": 55 },
+      { "name": "Excel", "level": 65 }
+    ]
+  },
+  {
+    "category": "Soft Skills",
+    "icon": "Layers",
+    "items": [
+      { "name": "Problem Solving", "level": 87 },
+      { "name": "Analytical Thinking", "level": 85 },
+      { "name": "Teamwork", "level": 96 },
+      { "name": "Adaptability", "level": 90 },
+      { "name": "Time Management", "level": 95 }
+    ]
+  }
+]

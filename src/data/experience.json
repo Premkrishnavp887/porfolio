@@ -1,0 +1,23 @@
+[
+  {
+    "role": "DevOps Intern",
+    "org": "SAM CORPORATE",
+    "period": "Ongoing",
+    "type": "Internship",
+    "detail": "Focused on DevOps technologies and cloud fundamentals. Worked on Docker containerization, Linux administration, MongoDB Cloud, and Oracle Cloud Infrastructure (OCI) fundamentals."
+  },
+  {
+    "role": "Python Programming Intern",
+    "org": "InternPe",
+    "period": "1 Month",
+    "type": "Internship",
+    "detail": "One-month intensive internship focused on Python programming. Worked on practical Python applications, structuring data, and applying logical thinking to real-world problems."
+  },
+  {
+    "role": "Cyber Security Intern",
+    "org": "Retechnox Technologies",
+    "period": "5 Days",
+    "type": "Internship",
+    "detail": "5-day cybersecurity internship gaining foundational knowledge in cybersecurity. Hands-on experience with basic threat modeling and network security tools."
+  }
+]

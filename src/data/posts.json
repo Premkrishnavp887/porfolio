@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Getting Started with Docker for Beginners",
+    "excerpt": "A practical walkthrough of containerization concepts, Docker commands, and how to containerize your first Python application.",
+    "date": "2025-05-10",
+    "readTime": "6 min",
+    "tag": "DevOps"
+  },
+  {
+    "title": "Building Smart Homes with Python and Raspberry Pi",
+    "excerpt": "How I combined computer vision, IoT sensors, and Python to create an adaptive home automation system.",
+    "date": "2025-03-22",
+    "readTime": "9 min",
+    "tag": "IoT"
+  },
+  {
+    "title": "Cybersecurity Basics Every Developer Should Know",
+    "excerpt": "Threat modeling fundamentals, common vulnerabilities, and practical steps to secure your applications.",
+    "date": "2025-01-15",
+    "readTime": "7 min",
+    "tag": "Security"
+  },
+  {
+    "title": "From Intern to DevOps: My Learning Journey",
+    "excerpt": "Lessons learned from three internships — what worked, what didn't, and how to make the most of every opportunity.",
+    "date": "2024-11-08",
+    "readTime": "5 min",
+    "tag": "Career"
+  }
+]

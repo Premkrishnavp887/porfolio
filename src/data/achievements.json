@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Flipkart GRiD 6.0 – Level 1 (E-Commerce & Tech Quiz)",
+    "year": "",
+    "type": "Competition"
+  },
+  { "title": "Basics of Python - Infosys Springboard", "year": "", "type": "Certificate" },
+  {
+    "title": "Learn Ethical Hacking from Scratch - ZSecurity (Udemy)",
+    "year": "",
+    "type": "Certificate"
+  },
+  { "title": "Introduction to Cyber Security - Simplilearn", "year": "", "type": "Certificate" },
+  { "title": "ChatGPT for Cyber Security - Simplilearn", "year": "", "type": "Certificate" },
+  {
+    "title": "Beginners Guide to Ethical Hacking - Simplilearn",
+    "year": "",
+    "type": "Certificate"
+  },
+  { "title": "Docker for Absolute Beginners - KodeKloud", "year": "", "type": "Certificate" },
+  {
+    "title": "Amazon Elastic Container Service (EC2) - KodeKloud",
+    "year": "",
+    "type": "Certificate"
+  },
+  { "title": "Basics of Kubernetes - KodeKloud", "year": "", "type": "Certificate" }
+]
